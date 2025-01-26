@@ -51,12 +51,12 @@ You will need:
 
 ## Docking station
 
-Remove all the original electronics from the docking station
+Remove all the original electronics from the docking station.
 
 ![](readme/IMG_7514.JPG)
 ![](readme/IMG_7508.JPG)
 
-Place 2 expansions plugs in 2 holes
+Place 2 expansions plugs in 2 holes.
 
 ![](readme/IMG_7511.JPG)
 ![](readme/IMG_7512.JPG)
@@ -68,5 +68,66 @@ Screw the DC/DC board
 
 > [!NOTE]
 > Plug from the YardForce Classic 500 power supply was used here but the original Ambrogio power supply will work as well.
-> (find the positive and negative wires and connect it appropriately to the DC/DC board)
+(find the positive and negative wires and connect it appropriately to the DC/DC board)
+
+> [!NOTE]
 > For all the voltage and current adjustments please follow the official [OpenMower](https://openmower.de) documentation.
+
+
+## The mower
+
+Remove all the original mower electronics.
+Prepare the motor Hall sensor wires.
+
+![](readme/IMG_7787.JPG)
+![](readme/IMG_7790.JPG)
+![](readme/IMG_7791.JPG)
+
+Prepare the motor power wires.
+
+![](readme/IMG_7542.JPG)
+
+> [!NOTE]
+> YardForce Classic 500 wiring harness was used, since it fits to the OpenMower mainboard sockets, but it can be created from the scratch as well.
+
+> [!NOTE]
+> Crimped terminals for the motor power wires were used.
+
+> [!NOTE]
+> All 3 motor harnesses have the same colouring.
+
+Install the main switch into the mower body (power switch from the YardeForce Classic 500 was used here)
+> [!NOTE]
+> No need to install the power button if 2 relay board and top cover power buttons are integrated (see later in this tutorial).
+
+![](readme/IMG_7516.JPG)
+
+Remove Ambrogio's power supply socket
+
+![](readme/IMG_7515.JPG)
+
+Extend the circular hole to give it a rectangular shape with proper dimensions
+
+![](readme/IMG_7517.JPG)
+![](readme/IMG_7518.JPG)
+![](readme/IMG_7519.JPG)
+
+Insert the power switch
+
+![](readme/IMG_7520.JPG)
+
+Prepare the power supply harness.
+> [!NOTE]
+> Since the Ambrogio batteries have just 2 wires (positive and negative), Shottky diode was used to create separate charge + and battery + signals.
+
+Use XT60 plugs to create the power supply harness.
+
+Solder the female XT60 plugs to both power supply coming from the body and batteries.
+
+![](readme/IMG_7548.JPG)
+![](readme/IMG_7549.JPG)
+
+Solder the male XT60 plugs to the 2 ends of the harness (see the pictures below)
+
+![](readme/IMG_7546.JPG)
+![](readme/IMG_7547.JPG)
