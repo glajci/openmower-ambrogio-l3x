@@ -237,3 +237,48 @@ Connect the display with Raspberry Pi using Usb - micro Usb cable
 
 
 ## Software
+
+### Install the modified firmare on the Mainboard's Raspberry Pico.
+
+While holding down the BOOTSEL button on your Pico, connect it to your device via micro-USB cable.
+
+The Pico should present itself as a USB mass storage drive.
+
+Copy the `firmware.uf2` file (from [firmware.zip](firmware.zip)) to the root of the drive. Once copied, the storage drive will automatically disconnect, and the Pico is ready for use.
+
+> [!NOTE]
+> Please make sure that you choose the correct version of the firmware, matching the Mainboard version. Follow the official [OpenMower](https://openmower.de) documentation for more details.
+
+### Modify the mower_config.txt
+
+> [!NOTE]
+> Please follow the official [OpenMower](https://openmower.de) documentation for more details.
+
+Define the wheel distance and wheel ticks
+
+Set distance between wheels in m
+```
+export OM_WHEEL_DISTANCE_M=${WHEEL_DISTANCE_M:-0.355}
+```
+Set default ticks/m
+```
+export OM_WHEEL_TICKS_PER_M=${OM_WHEEL_TICKS_PER_M:-1830.0}
+```
+Define the GPS antena offsets, according to the antena position (depends on where the GPS antena is located in the mower)
+
+Set default GPS antenna offset
+```
+export OM_ANTENNA_OFFSET_X=${OM_ANTENNA_OFFSET_X:-0.08}
+export OM_ANTENNA_OFFSET_Y=${OM_ANTENNA_OFFSET_Y:-0.0}
+```
+
+![](readme/IMG_7962.JPG)
+![](readme/IMG_7930.JPG)
+![](readme/IMG_7932.JPG)
+![](readme/IMG_7935.JPG)
+![](readme/IMG_7936.JPG)
+![](readme/IMG_7937.JPG)
+![](readme/IMG_7939.JPG)
+![](readme/IMG_7702.JPG)
+![](readme/IMG_7703.JPG)
+![](readme/IMG_7704.JPG)
