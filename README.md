@@ -43,6 +43,30 @@ You will need:
 * USB Wi-Fi Dongle
 * Yard Force Classic 500 wiring harnesses (can be created from the scratch as well)
 * [Vesc Tool Free](https://vesc-project.com/node/17)
-* @@@@@@Display (optional)
-* @@@@@@@@Rpico (optional)
-* @@@@@@power switch board (optional)
+* 16x2 LCD Display with I2C adapter (optional)
+* Raspberry Pico W (optional)
+* 2 relay module (optional)
+
+# Assembly
+
+## Docking station
+
+Remove all the original electronics from the docking station
+
+![](readme/IMG_7514.JPG)
+![](readme/IMG_7508.JPG)
+
+Place 2 expansions plugs in 2 holes
+
+![](readme/IMG_7511.JPG)
+![](readme/IMG_7512.JPG)
+
+Screw the DC/DC board
+
+![](readme/IMG_7513.JPG)
+![](readme/IMG_7510.JPG)
+
+> [!NOTE]
+> Plug from the YardForce Classic 500 power supply was used here but the original Ambrogio power supply will work as well.
+> (find the positive and negative wires and connect it appropriately to the DC/DC board)
+> For all the voltage and current adjustments please follow the official [OpenMower](https://openmower.de) documentation.
