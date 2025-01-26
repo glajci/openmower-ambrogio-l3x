@@ -14,7 +14,7 @@ Convert Ambrogio L30 mower to [OpenMower](https://openmower.de) powered mower.
 * All of the features of the [OpenMower](https://openmower.de)
 * Rain sensor
 * Lift Sensor
-* Emergency push button
+* Emergency Stop push button
 * Cutting with 25cm
 * Integrated built-in display (optional)
 * Integrated top cover panel buttons (optional)
@@ -42,6 +42,7 @@ You will need:
 * SD Card 16GB+
 * USB Wi-Fi Dongle
 * Yard Force Classic 500 wiring harnesses (can be created from the scratch as well)
+* 3D printer
 * [Vesc Tool Free](https://vesc-project.com/node/17)
 * 16x2 LCD Display with I2C adapter (optional)
 * Raspberry Pico W (optional)
@@ -77,13 +78,19 @@ Screw the DC/DC board
 ## The mower
 
 Remove all the original mower electronics.
-Prepare the motor Hall sensor wires.
+Cut the plastic elements (see the pictures below) to make the place for the mainboard.
+
+![](readme/IMG_7551.JPG)
+![](readme/IMG_7552.JPG)
+
+
+### Prepare the motor Hall sensor wires.
 
 ![](readme/IMG_7787.JPG)
 ![](readme/IMG_7790.JPG)
 ![](readme/IMG_7791.JPG)
 
-Prepare the motor power wires.
+### Prepare the motor power wires.
 
 ![](readme/IMG_7542.JPG)
 
@@ -96,7 +103,7 @@ Prepare the motor power wires.
 > [!NOTE]
 > All 3 motor harnesses have the same colouring.
 
-Install the main switch into the mower body (power switch from the YardeForce Classic 500 was used here)
+### Install the main switch into the mower body (power switch from the YardeForce Classic 500 was used here)
 > [!NOTE]
 > No need to install the power button if 2 relay board and top cover power buttons are integrated (see later in this tutorial).
 
@@ -116,7 +123,7 @@ Insert the power switch
 
 ![](readme/IMG_7520.JPG)
 
-Prepare the power supply harness.
+### Prepare the power supply harness.
 > [!NOTE]
 > Since the Ambrogio batteries have just 2 wires (positive and negative), Shottky diode was used to create separate charge + and battery + signals.
 
@@ -131,3 +138,102 @@ Solder the male XT60 plugs to the 2 ends of the harness (see the pictures below)
 
 ![](readme/IMG_7546.JPG)
 ![](readme/IMG_7547.JPG)
+
+### Prepare the lift sensor cable.
+
+![](readme/IMG_7797.JPG)
+
+### Install the mainboard
+
+Unscrew the original left and right battery holders.
+Print and screw the mainboard holders.
+> [!NOTE]
+> You will find all the 3d models in this repository.
+
+![](readme/IMG_7809.JPG)
+![](readme/IMG_7810.JPG)
+![](readme/IMG_7811.JPG)
+
+### Prepare the top cover panel harness.
+
+![](readme/IMG_7529.JPG)
+![](readme/IMG_7794.JPG)
+![](readme/IMG_7789.JPG)
+
+### Connect Emergency Stop push button and rain sensor to the mainboard.
+
+![](readme/IMG_7917.JPG)
+
+### (Optional) Install the GPS antenna in the mower's body
+
+> [!NOTE]
+> There is no need to cut the hole in the mower's body for the GPS antena. It can work inside of the mower as well.
+> Installing it like in the pictures below, improve the signal quality
+
+Cut the hole in the mower body.
+
+![](readme/IMG_7521.JPG)
+![](readme/IMG_7522.JPG)
+![](readme/IMG_7523.JPG)
+![](readme/IMG_7524.JPG)
+
+Install the GPS antena in the body and seal it with the silicone.
+
+![](readme/IMG_7535.JPG)
+![](readme/IMG_7922.JPG)
+
+Install a piece of steel material from the bottom as the antenna shield.
+
+![](readme/IMG_7928.JPG)
+
+
+### (Optional) Install the 2 relay module as power switch.
+
+Use exaclty the same 2 relay module as on the picture below.
+
+![](readme/IMG_7907.JPG)
+
+Solder the wires from the bottom.
+
+![](readme/IMG_7908.JPG)
+
+Prepare the wires and the plug for on/off buttons.
+
+![](readme/IMG_7918.JPG)
+
+Print and screw the 2 relay module adapter.
+
+![](readme/IMG_7924.JPG)
+![](readme/IMG_7925.JPG)
+
+Connect as show below.
+
+![](readme/IMG_7919.JPG)
+![](readme/IMG_7926.JPG)
+![](readme/IMG_7920.JPG)
+
+
+### (Optional) Install the display.
+
+Print the 3d model.
+
+![](readme/IMG_7888.JPG)
+
+Screw the Raspberry Pico W and LCD display and connect the wires as shown below.
+
+![](readme/IMG_7910.JPG)
+![](readme/IMG_7911.JPG)
+
+Install the display to the mower and connect it with the top cover panel.
+
+![](readme/IMG_7909.JPG)
+![](readme/IMG_7913.JPG)
+![](readme/IMG_7916.JPG)
+
+Connect the display with Raspberry Pi using Usb - micro Usb cable
+
+![](readme/IMG_7928.JPG)
+![](readme/IMG_7929.JPG)
+
+
+## Software
