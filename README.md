@@ -154,9 +154,9 @@ Print and screw the mainboard holders.
 ![](readme/IMG_7810.JPG)
 ![](readme/IMG_7811.JPG)
 
-### Prepare the display harness.
+### Prepare the top cover panel harness.
 
-![](readme/IMG_7829.JPG)
+![](readme/IMG_7529.JPG)
 ![](readme/IMG_7794.JPG)
 ![](readme/IMG_7789.JPG)
 
@@ -180,5 +180,60 @@ Cut the hole in the mower body.
 Install the GPS antena in the body and seal it with the silicone.
 
 ![](readme/IMG_7535.JPG)
+![](readme/IMG_7922.JPG)
+
+Install a piece of steel material from the bottom as the antenna shield.
+
+![](readme/IMG_7928.JPG)
+
+
+### (Optional) Install the 2 relay module as power switch.
+
+Use exaclty the same 2 relay module as on the picture below.
+
+![](readme/IMG_7907.JPG)
+
+Solder the wires from the bottom.
+
+![](readme/IMG_7908.JPG)
+
+Prepare the wires and the plug for on/off buttons.
+
+![](readme/IMG_7918.JPG)
+
+Print and screw the 2 relay module adapter.
+
+![](readme/IMG_7924.JPG)
+![](readme/IMG_7925.JPG)
+
+Connect as show below.
+
+![](readme/IMG_7919.JPG)
+![](readme/IMG_7926.JPG)
+![](readme/IMG_7920.JPG)
+
+
+### (Optional) Install the display.
+
+Print the 3d model.
+
+![](readme/IMG_7888.JPG)
+
+Screw the Raspberry Pico W and LCD display and connect the wires as shown below.
+
+![](readme/IMG_7910.JPG)
+![](readme/IMG_7911.JPG)
+
+Install the display to the mower and connect it with the top cover panel.
+
+![](readme/IMG_7909.JPG)
+![](readme/IMG_7913.JPG)
+![](readme/IMG_7916.JPG)
+
+Connect the display with Raspberry Pi using Usb - micro Usb cable
+
+![](readme/IMG_7928.JPG)
+![](readme/IMG_7929.JPG)
+
 
 ## Software
