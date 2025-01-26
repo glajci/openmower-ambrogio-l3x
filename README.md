@@ -1,5 +1,5 @@
-# openmower-ambrogio-l3x
-Convert Ambrogio L3x mower to [OpenMower](https://openmower.de) powered mower.
+# Openmower - Ambrogio - L3x
+Convert Ambrogio L30 mower to [OpenMower](https://openmower.de) powered mower.
 
 ![Demo picture](readme/IMG_7961.JPG)
 
