@@ -16,8 +16,7 @@ Convert Ambrogio L30 mower to [OpenMower](https://openmower.de) powered mower.
 * Lift Sensor
 * Emergency Stop push button
 * Cutting with 25cm
-* Integrated built-in display (optional)
-* Integrated top cover panel buttons (optional)
+* Integrated built-in display and top cover buttons (optional)
 
 
 > Comparison with Yard Force Classic 500
@@ -272,13 +271,107 @@ export OM_ANTENNA_OFFSET_X=${OM_ANTENNA_OFFSET_X:-0.08}
 export OM_ANTENNA_OFFSET_Y=${OM_ANTENNA_OFFSET_Y:-0.0}
 ```
 
-![](readme/IMG_7962.JPG)
-![](readme/IMG_7930.JPG)
-![](readme/IMG_7932.JPG)
+### The display
+
+Display connects to the OpenMower's MQTT over WIFI (either via router or (prefferable) directly to OpenMower's Hotspot), to both, read and send MQTT messages.
+
+> [!NOTE]
+> You will find similar project in [openmower-display](https://github.com/glajci/openmower-display/blob/main/README.md) repository.
+
+#### Features
+
+* Show actual OpenMower state, sensors values (GPS accuracy, Battery voltage, Charging)
+* Start, Pause, Dock, Reset Emergency, Skip area, Skip path actions
+* Sleep timer turns off display after 60s, wakes on any button press
+
+#### Tools
+
+You will need:
+
+* A [Raspberry Pi Pico W](https://www.raspberrypi.com/news/raspberry-pi-pico-w-your-6-iot-platform/).
+* A [Pimoroni Pico Display Pack 2.0](https://shop.pimoroni.com/products/pico-display-pack-2-0?variant=39374122582099).
+* A micro-USB cable.
+* A UF2 image (included in this repository) for Pico W.
+* A computer (presumably, the one you are reading this on!)
+* [Thonny](https://thonny.org/).
+
+Additionally, if your Pico W does not have any GPIO headers pre-attached, you will need:
+
+* A pair of Pico GPIO header pins.
+* A soldering iron + solder.
+* A breadboard to align the pins while soldering.
+
+##### Pico Setup
+
+While holding down the BOOTSEL button on your Pico, connect it to your device via micro-USB cable.
+
+The Pico should present itself as a USB mass storage drive.
+
+Copy the [UF2](display/RPI_PICO_W-20241129-v1.24.1.uf2) file to the root of the drive. Once copied, the storage drive will automatically disconnect, and the Pico is ready for use.
+
+##### Basic Config
+
+There are 2 possible configurations of the display:
+1. connecting the display to the same WIFI, the OpenMower is connected
+2. connecting the display to the OpenMower's Hotspot (possible if you are using external WIFI USB dongle plugged in the OpenMower's Raspberry Pi with [this](/readme/hotspot.txt.settings) CommitUp configuration of the OpenMower (primary_wifi_device: wlan0)
+ * Personally I prefer the option 2, as you will avoid WIFI range issues (Rpi Pico W does not have the external WIFI antenna connector). Connecting the display to the RPi HotSpot will ensure the stable connection. Option 1 will work as well if you have a good WIFI coverage over the mowing areas or if you intend to use it as a Remote Control.
+   
+Open the following files in the text editor of your choice: `config.py` and `secrets.py`.
+
+In `secrets.py`, you need to provide:
+
+* The SSID and password for your WiFi network or OpenMower Hotspot (prefferable).
+
+Example:
+```bash
+ssid = "openmower-93"
+password = "openmower"
+```
+
+In `config.py`, you need to provide:
+
+* The IP address or hostname (openmower.local) of MQTT of the OpenMower, and the MQTT port
+
+Example:
+```bash
+mqtt_host = "10.41.0.1"
+mqtt_port = 1883
+```
+
+##### First Run
+
+Once the above steps are complete, connect your Pico W to your machine and open Thonny. Make sure to select the Pico's MicroPython environment on the bottom-right of the Thonny window, then, once connected, upload each of the `.py` files to your device.
+
+**NOTE:** Depending on the UF2 image that you used, you *might* need to install the `urequests` package before running the display for the first time. To do this, uncomment the relavent lines in `mqtt.py`, save to the Pico and then run `main.py` once manually in order for the Pico to connect to your network and install the package. Alternatively, you can install `urequests` to the Pico via Thonny's package manager.
+
+Once installed, stop execution, re-comment or delete the lines, save and re-upload to the Pico.
+
+The application will now auto-start whenever you supply power to your Pico.
+
+After successful installation you should see something like that:
+![Main screen](readme/IMG_7932.JPG)
+
+Turn on the OpenMower, when the connection is established you should be able to operate the OpenMower:
+![Demo picture](readme/IMG_7930.JPG)
+
+Pressing the Enter button on the top cover panel, you will enter the menu.
+Depending on the current mower status you will see one of the following submenus.
+
 ![](readme/IMG_7935.JPG)
 ![](readme/IMG_7936.JPG)
 ![](readme/IMG_7937.JPG)
 ![](readme/IMG_7939.JPG)
+
+Using Up and Down arrow on the top cover panel, you can scroll the available options.
+Pressing Enter will either go into submenu, trigger an action (like Reset Emergency) or return to previous menu.
+
+# Summary
+
+Hopefully, you will manage to follow the instructions and by the end of the day you will enjoy the perfect lawn.
+
+![](readme/IMG_7962.JPG)
 ![](readme/IMG_7702.JPG)
 ![](readme/IMG_7703.JPG)
 ![](readme/IMG_7704.JPG)
+
+In case of any support request visit the excellent OpenMower community on the dedicated [Discord](https://discord.gg/jE7QNaSxW7) channel.
