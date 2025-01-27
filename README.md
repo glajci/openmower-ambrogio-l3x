@@ -237,6 +237,10 @@ Connect the display with Raspberry Pi using Usb - micro Usb cable
 
 ## Software
 
+### Install the OpenMower on the Raspberry Pi
+
+Please follow the official [OpenMower](https://openmower.de) documentation for more details.
+
 ### Install the modified firmare on the Mainboard's Raspberry Pico.
 
 While holding down the BOOTSEL button on your Pico, connect it to your device via micro-USB cable.
