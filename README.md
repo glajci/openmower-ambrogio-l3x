@@ -104,7 +104,7 @@ Cut the plastic elements (see the pictures below) to make the place for the main
 
 ### Install the main switch into the mower body (power switch from the YardeForce Classic 500 was used here)
 > [!NOTE]
-> No need to install the power button if 2 relay board and top cover power buttons are integrated (see later in this tutorial).
+> No need to install the power button if 2 relay module and top cover power buttons are integrated (see later in this tutorial).
 
 ![](readme/IMG_7516.JPG)
 
@@ -265,7 +265,7 @@ export OM_WHEEL_TICKS_PER_M=${OM_WHEEL_TICKS_PER_M:-1830.0}
 ```
 Define the GPS antena offsets, according to the antena position (depends on where the GPS antena is located in the mower)
 
-Set default GPS antenna offset
+Set default GPS antenna offset (Example)
 ```
 export OM_ANTENNA_OFFSET_X=${OM_ANTENNA_OFFSET_X:-0.08}
 export OM_ANTENNA_OFFSET_Y=${OM_ANTENNA_OFFSET_Y:-0.0}
@@ -355,15 +355,17 @@ Turn on the OpenMower, when the connection is established you should be able to 
 ![Demo picture](readme/IMG_7930.JPG)
 
 Pressing the Enter button on the top cover panel, you will enter the menu.
-Depending on the current mower status you will see one of the following submenus.
+Depending on the current mower status you will see one of the submenus.
 
 ![](readme/IMG_7935.JPG)
-![](readme/IMG_7936.JPG)
-![](readme/IMG_7937.JPG)
-![](readme/IMG_7939.JPG)
 
 Using Up and Down arrow on the top cover panel, you can scroll the available options.
 Pressing Enter will either go into submenu, trigger an action (like Reset Emergency) or return to previous menu.
+
+When OpenMower operates you will see one of the following statuses.
+![](readme/IMG_7936.JPG)
+![](readme/IMG_7937.JPG)
+![](readme/IMG_7939.JPG)
 
 # Summary
 
