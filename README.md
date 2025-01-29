@@ -18,7 +18,6 @@ Convert Ambrogio L30 mower to [OpenMower](https://openmower.de) powered mower.
 * Cutting with 25cm
 * Integrated built-in display and top cover buttons (optional)
 
-
 > Comparison with Yard Force Classic 500
 > * Pros:
 >   * Increased cutting width (25cm)
