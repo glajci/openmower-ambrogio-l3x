@@ -1,7 +1,7 @@
 # Openmower - Ambrogio - L3x
 Convert Ambrogio L30 mower to [OpenMower](https://openmower.de) powered mower.
 
-![Demo picture](readme/IMG_7961.JPG)
+![Demo picture](readme/IMG_7961.JPG?)
 
 > [!WARNING]
 > Please be aware that this is a working prototype, any modifications to the mower are made at your own risk.
@@ -52,18 +52,18 @@ You will need:
 
 Remove all the original electronics from the docking station.
 
-![](readme/IMG_7514.JPG)
-![](readme/IMG_7508.JPG)
+![](readme/IMG_7514.JPG?)
+![](readme/IMG_7508.JPG?)
 
 Place 2 expansions plugs in 2 holes.
 
-![](readme/IMG_7511.JPG)
-![](readme/IMG_7512.JPG)
+![](readme/IMG_7511.JPG?)
+![](readme/IMG_7512.JPG?)
 
 Screw the DC/DC board
 
-![](readme/IMG_7513.JPG)
-![](readme/IMG_7510.JPG)
+![](readme/IMG_7513.JPG?)
+![](readme/IMG_7510.JPG?)
 
 > [!NOTE]
 > Plug from the YardForce Classic 500 power supply was used here but the original Ambrogio power supply will work as well.
@@ -78,19 +78,19 @@ Screw the DC/DC board
 Remove all the original mower electronics.
 Cut the plastic elements (see the pictures below) to make the place for the mainboard.
 
-![](readme/IMG_7551.JPG)
-![](readme/IMG_7552.JPG)
+![](readme/IMG_7551.JPG?)
+![](readme/IMG_7552.JPG?)
 
 
 ### Prepare the motor Hall sensor wires.
 
-![](readme/IMG_7787.JPG)
-![](readme/IMG_7790.JPG)
-![](readme/IMG_7791.JPG)
+![](readme/IMG_7787.JPG?)
+![](readme/IMG_7790.JPG?)
+![](readme/IMG_7791.JPG?)
 
 ### Prepare the motor power wires.
 
-![](readme/IMG_7542.JPG)
+![](readme/IMG_7542.JPG?)
 
 > [!NOTE]
 > YardForce Classic 500 wiring harness was used, since it fits to the OpenMower mainboard sockets, but it can be created from the scratch as well.
@@ -105,21 +105,21 @@ Cut the plastic elements (see the pictures below) to make the place for the main
 > [!NOTE]
 > No need to install the power button if 2 relay module and top cover power buttons are integrated (see later in this tutorial).
 
-![](readme/IMG_7516.JPG)
+![](readme/IMG_7516.JPG?)
 
 Remove Ambrogio's power supply socket
 
-![](readme/IMG_7515.JPG)
+![](readme/IMG_7515.JPG?)
 
 Extend the circular hole to give it a rectangular shape with proper dimensions
 
-![](readme/IMG_7517.JPG)
-![](readme/IMG_7518.JPG)
-![](readme/IMG_7519.JPG)
+![](readme/IMG_7517.JPG?)
+![](readme/IMG_7518.JPG?)
+![](readme/IMG_7519.JPG?)
 
 Insert the power switch
 
-![](readme/IMG_7520.JPG)
+![](readme/IMG_7520.JPG?)
 
 ### Prepare the power supply harness.
 > [!NOTE]
@@ -129,17 +129,17 @@ Use XT60 plugs to create the power supply harness.
 
 Solder the female XT60 plugs to both power supply coming from the body and batteries.
 
-![](readme/IMG_7548.JPG)
-![](readme/IMG_7549.JPG)
+![](readme/IMG_7548.JPG?)
+![](readme/IMG_7549.JPG?)
 
 Solder the male XT60 plugs to the 2 ends of the harness (see the pictures below)
 
-![](readme/IMG_7546.JPG)
-![](readme/IMG_7547.JPG)
+![](readme/IMG_7546.JPG?)
+![](readme/IMG_7547.JPG?)
 
 ### Prepare the lift sensor cable.
 
-![](readme/IMG_7797.JPG)
+![](readme/IMG_7797.JPG?)
 
 ### Install the mainboard
 
@@ -148,19 +148,19 @@ Print and screw the mainboard holders.
 > [!NOTE]
 > You will find all the 3d models in this repository.
 
-![](readme/IMG_7809.JPG)
-![](readme/IMG_7810.JPG)
-![](readme/IMG_7811.JPG)
+![](readme/IMG_7809.JPG?)
+![](readme/IMG_7810.JPG?)
+![](readme/IMG_7811.JPG?)
 
 ### Prepare the top cover panel harness.
 
-![](readme/IMG_7529.JPG)
-![](readme/IMG_7794.JPG)
-![](readme/IMG_7789.JPG)
+![](readme/IMG_7529.JPG?)
+![](readme/IMG_7794.JPG?)
+![](readme/IMG_7789.JPG?)
 
 ### Connect Emergency Stop push button and rain sensor to the mainboard.
 
-![](readme/IMG_7917.JPG)
+![](readme/IMG_7917.JPG?)
 
 ### (Optional) Install the GPS antenna in the mower's body
 
@@ -170,68 +170,68 @@ Print and screw the mainboard holders.
 
 Cut the hole in the mower body.
 
-![](readme/IMG_7521.JPG)
-![](readme/IMG_7522.JPG)
-![](readme/IMG_7523.JPG)
-![](readme/IMG_7524.JPG)
+![](readme/IMG_7521.JPG?)
+![](readme/IMG_7522.JPG?)
+![](readme/IMG_7523.JPG?)
+![](readme/IMG_7524.JPG?)
 
 Install the GPS antena in the body and seal it with the silicone.
 
-![](readme/IMG_7535.JPG)
-![](readme/IMG_7922.JPG)
+![](readme/IMG_7535.JPG?)
+![](readme/IMG_7922.JPG?)
 
 Install a piece of steel material from the bottom as the antenna shield.
 
-![](readme/IMG_7928.JPG)
+![](readme/IMG_7928.JPG?)
 
 
 ### (Optional) Install the 2 relay module as power switch.
 
 Use exaclty the same 2 relay module as on the picture below.
 
-![](readme/IMG_7907.JPG)
+![](readme/IMG_7907.JPG?)
 
 Solder the wires from the bottom.
 
-![](readme/IMG_7908.JPG)
+![](readme/IMG_7908.JPG?)
 
 Prepare the wires and the plug for on/off buttons.
 
-![](readme/IMG_7918.JPG)
+![](readme/IMG_7918.JPG?)
 
 Print and screw the 2 relay module adapter.
 
-![](readme/IMG_7924.JPG)
-![](readme/IMG_7925.JPG)
+![](readme/IMG_7924.JPG?)
+![](readme/IMG_7925.JPG?)
 
 Connect as show below.
 
-![](readme/IMG_7919.JPG)
-![](readme/IMG_7926.JPG)
-![](readme/IMG_7920.JPG)
+![](readme/IMG_7919.JPG?)
+![](readme/IMG_7926.JPG?)
+![](readme/IMG_7920.JPG?)
 
 
 ### (Optional) Install the display.
 
 Print the 3d model.
 
-![](readme/IMG_7888.JPG)
+![](readme/IMG_7888.JPG?)
 
 Screw the Raspberry Pico W and LCD display and connect the wires as shown below.
 
-![](readme/IMG_7910.JPG)
-![](readme/IMG_7911.JPG)
+![](readme/IMG_7910.JPG?)
+![](readme/IMG_7911.JPG?)
 
 Install the display to the mower and connect it with the top cover panel.
 
-![](readme/IMG_7909.JPG)
-![](readme/IMG_7913.JPG)
-![](readme/IMG_7916.JPG)
+![](readme/IMG_7909.JPG?)
+![](readme/IMG_7913.JPG?)
+![](readme/IMG_7916.JPG?)
 
 Connect the display with Raspberry Pi using Usb - micro Usb cable
 
-![](readme/IMG_7928.JPG)
-![](readme/IMG_7929.JPG)
+![](readme/IMG_7928.JPG?)
+![](readme/IMG_7929.JPG?)
 
 
 ## Software
@@ -352,31 +352,40 @@ Once installed, stop execution, re-comment or delete the lines, save and re-uplo
 The application will now auto-start whenever you supply power to your Pico.
 
 After successful installation you should see something like that:
-![Main screen](readme/IMG_7932.JPG)
 
-Turn on the OpenMower, when the connection is established you should be able to operate the OpenMower:
-![Demo picture](readme/IMG_7930.JPG)
+![Main screen](readme/IMG_7932.JPG?)
 
-Pressing the Enter button on the top cover panel, you will enter the menu.
+Turn on the OpenMower, it will try to establish MQTT connections.
+
+![Demo picture](readme/IMG_7977.JPG?)
+
+When the connection is established you should be able to operate the OpenMower:
+
+![Demo picture](readme/IMG_7930.JPG?)
+
+Pressing the Up, Down or Enter button on the top cover panel, you will enter the menu.
 Depending on the current mower status you will see one of the submenus.
 
-![](readme/IMG_7935.JPG)
+![](readme/IMG_7935.JPG?)
+![](readme/IMG_7987.JPG?)
+![](readme/IMG_7988.JPG?)
 
-Using Up and Down arrow on the top cover panel, you can scroll the available options.
-Pressing Enter will either go into submenu, trigger an action (like Reset Emergency) or return to previous menu.
+
+Using Up and Down arrows on the top cover panel, you can scroll the available submenus.
+Pressing Enter will execute the selected menu action (example: Reset Emergency) and return to main view.
 
 When OpenMower operates you will see one of the following statuses.
-![](readme/IMG_7936.JPG)
-![](readme/IMG_7937.JPG)
-![](readme/IMG_7939.JPG)
+![](readme/IMG_7936.JPG?)
+![](readme/IMG_7937.JPG?)
+![](readme/IMG_7939.JPG?)
 
 # Summary
 
 Hopefully, you will manage to follow the instructions and by the end of the day you will enjoy the perfect lawn.
 
-![](readme/IMG_7962.JPG)
-![](readme/IMG_7702.JPG)
-![](readme/IMG_7703.JPG)
-![](readme/IMG_7704.JPG)
+![](readme/IMG_7962.JPG?)
+![](readme/IMG_7702.JPG?)
+![](readme/IMG_7703.JPG?)
+![](readme/IMG_7704.JPG?)
 
 In case of any support request visit the excellent OpenMower community on the dedicated [Discord](https://discord.gg/jE7QNaSxW7) channel.
