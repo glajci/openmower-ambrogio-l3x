@@ -29,10 +29,7 @@ class Display:
         self.lcd.move_to(0,0)
         self.lcd.putstr(state + " " * (15 - len(state)))
 
-    def draw_emergency(self, emergency: bool):
-        if emergency == self.emergency: return
-        self.emergency = emergency
-        
+    def draw_emergency(self, emergency: bool):     
         self.lcd.move_to(15,0)
         if emergency:
             self.lcd.putchar(chr(0))
@@ -70,10 +67,12 @@ class Display:
         self.lcd.move_to(8,1)
         self.lcd.putstr(" " * (7 - len(voltage_formatted)) + voltage_formatted)
 
-    def draw_menu(self, menu_item):
-        if menu_item == None: return
+    def draw_menu(self, title, subtitle):
+        if title == None: return
+        self.lcd.move_to(0,0)
+        self.lcd.putstr(title + " " * (16 - len(title)))
         self.lcd.move_to(0,1)
-        self.lcd.putstr(menu_item + " " * (16 - len(menu_item)))
+        self.lcd.putstr(subtitle + " " * (16 - len(subtitle)))
 
     def draw_print_message(self, message):
         self.lcd.move_to(0,1)

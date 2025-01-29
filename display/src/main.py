@@ -34,10 +34,10 @@ class App:
             self.menu.set_actions()
         elif topic == Openmower.topics.robot_state.b_name:
             state = json.loads(message)
-            self.display.draw_mower_state(state['current_state'])
-            self.display.draw_emergency(state['emergency'])
             if self.menu.is_active():
                 return
+            self.display.draw_mower_state(state['current_state'])
+            self.display.draw_emergency(state['emergency'])
             self.display.draw_gps(state['pose']['pos_accuracy'], state['gps_percentage'])
             self.display.draw_battery(state['battery_percentage'], state['is_charging'])
         elif topic == Openmower.topics.v_battery.b_name:
@@ -80,33 +80,33 @@ while True:
             elif Openmower.actions.continue_mowing.enabled:
                 action = Openmower.actions.continue_mowing
 
-    if app.buttonDock.value() == 1:
+    elif app.buttonDock.value() == 1:
         print('dock')
         button_pressed = True              
         if all_buttons_released: 
             action = Openmower.actions.abort_mowing
 
-    if app.buttonDown.value() == 0:
+    elif app.buttonDown.value() == 0:
         print('down')
         button_pressed = True
         if all_buttons_released and not app.display.isAsleep:
             app.menu.go_down()
-            app.display.draw_menu(app.menu.current_item.title)
+            app.display.draw_menu(app.menu.current_item.title, app.menu.current_item.subtitle)
 
-    if app.buttonEnter.value() == 0:
+    elif app.buttonEnter.value() == 0:
         print('enter')
         button_pressed = True
         if all_buttons_released and not app.display.isAsleep:
             action = app.menu.current_item.action
             app.menu.enter()
-            app.display.draw_menu(app.menu.current_item.title)
+            app.display.draw_menu(app.menu.current_item.title, app.menu.current_item.subtitle)
 
-    if app.buttonUp.value() == 0:
+    elif app.buttonUp.value() == 0:
         print('up')
         button_pressed = True
         if all_buttons_released and not app.display.isAsleep:
             app.menu.go_up()
-            app.display.draw_menu(app.menu.current_item.title)
+            app.display.draw_menu(app.menu.current_item.title, app.menu.current_item.subtitle)
 
     if all_buttons_released and button_pressed:
         last_use = utime.ticks_ms()
