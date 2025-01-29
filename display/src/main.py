@@ -69,15 +69,16 @@ while True:
     button_pressed = False
     action = None
 
-    if all_buttons_released and app.buttonPlay.value() == 1:
+    if app.buttonPlay.value() == 1:
         print('play')
         button_pressed = True
-        if Openmower.actions.start_mowing.enabled:
-            action = Openmower.actions.start_mowing
-        elif Openmower.actions.pause_mowing.enabled:
-            action = Openmower.actions.pause_mowing
-        elif Openmower.actions.continue_mowing.enabled:
-            action = Openmower.actions.continue_mowing
+        if all_buttons_released:
+            if Openmower.actions.start_mowing.enabled:
+                action = Openmower.actions.start_mowing
+            elif Openmower.actions.pause_mowing.enabled:
+                action = Openmower.actions.pause_mowing
+            elif Openmower.actions.continue_mowing.enabled:
+                action = Openmower.actions.continue_mowing
 
     if app.buttonDock.value() == 1:
         print('dock')
