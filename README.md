@@ -123,19 +123,23 @@ Insert the power switch
 
 ### Prepare the power supply harness.
 > [!NOTE]
-> Since the Ambrogio batteries have just 2 wires (positive and negative), Shottky diode was used to create separate charge + and battery + signals.
+> Since the Ambrogio batteries have just 2 wires (positive and negative), Shottky diode was used to create separate charge + and battery + signals. (Original YardForce Classic 500 battery plug was use here)
 
-Use XT60 plugs to create the power supply harness.
+![](readme/IMG_8353.JPG?)
+![](readme/IMG_8357.JPG?)
 
-Solder the female XT60 plugs to both power supply coming from the body and batteries.
+Prepare the power connectors
 
-![](readme/IMG_7548.JPG?)
-![](readme/IMG_7549.JPG?)
+![](readme/IMG_8354.JPG?)
 
-Solder the male XT60 plugs to the 2 ends of the harness (see the pictures below)
+Connect it to the OpenMower mainboard.
 
-![](readme/IMG_7546.JPG?)
-![](readme/IMG_7547.JPG?)
+![](readme/IMG_8356.JPG?)
+
+Connect OpenMower with power button (2 relay module visible on the pictures is optional - see later in this tutorial).
+
+![](readme/IMG_8359.JPG?)
+![](readme/IMG_8360.JPG?)
 
 ### Prepare the lift sensor cable.
 
@@ -210,7 +214,6 @@ Connect as show below.
 ![](readme/IMG_7926.JPG?)
 ![](readme/IMG_7920.JPG?)
 
-
 ### (Optional) Install the display.
 
 Print the 3d model.
@@ -240,16 +243,30 @@ Connect the display with Raspberry Pi using Usb - micro Usb cable
 
 Please follow the official [OpenMower](https://openmower.de) documentation for more details.
 
-### Install the modified firmare on the Mainboard's Raspberry Pico.
+### Upload configuration files to xESC
 
-While holding down the BOOTSEL button on your Pico, connect it to your device via micro-USB cable.
+Connect to the xESC which is going to be the mowing motor controller using USB to microUSB cable.
 
-The Pico should present itself as a USB mass storage drive.
+Open Vesc Tool [Vesc Tool Free](https://vesc-project.com/node/17).
 
-Copy the `firmware.uf2` file (from [firmware.zip](firmware.zip)) to the root of the drive. Once copied, the storage drive will automatically disconnect, and the Pico is ready for use.
+Load the following configuration file and write it to the mowing motor xESC.
+
+[Ambrogio_L30_Mower_Motor_10A.xml](configuration/Ambrogio_L30_Mower_Motor_10A.xml)
+
+Connect to the xESC's which are going to be the drive motors controllers using USB to microUSB cable.
+
+Open Vesc Tool [Vesc Tool Free](https://vesc-project.com/node/17).
+
+Load the following configuration file and write it to the drive motor xESC.
+
+[Ambrogio_L30_Drive_Motor.xml](configuration/Ambrogio_L30_Drive_Motor.xml)
 
 > [!NOTE]
-> Please make sure that you choose the correct version of the firmware, matching the Mainboard version. Follow the official [OpenMower](https://openmower.de) documentation for more details.
+> The xESC configuration files provided above are suited for Ambrogio L30 motor. Play with Vesc Tool to find best settings for another motors.
+
+> [!NOTE]
+> Please follow the official [Vesc](https://vesc-project.com/documentation) documentation for more details.
+
 
 ### Modify the mower_config.txt
 
@@ -272,6 +289,13 @@ Set default GPS antenna offset (Example)
 ```
 export OM_ANTENNA_OFFSET_X=${OM_ANTENNA_OFFSET_X:-0.08}
 export OM_ANTENNA_OFFSET_Y=${OM_ANTENNA_OFFSET_Y:-0.0}
+```
+
+Set the following configuration of the emergency inputs
+```
+export OM_EMERGENCY_INPUT_CONFIG="L, I, I, !S"
+export OM_EMERGENCY_LIFT_PERIOD="100"
+export OM_EMERGENCY_TILT_PERIOD="2500"
 ```
 
 ### The display
