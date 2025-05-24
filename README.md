@@ -94,7 +94,7 @@ Cut the plastic elements (see the pictures below) to make the place for the main
 
 ### Ambrogio L30 Opemnower wiring diagram.
 
-![](readme/readme/ambrogio_l30_openmower_wiring_diagram.jpg?)
+![](readme/ambrogio_l30_openmower_wiring_diagram.jpg?)
 
 > [!NOTE]
 > YardForce Classic 500 wiring harness was used, since it fits to the OpenMower mainboard sockets, but it can be created from the scratch as well.
