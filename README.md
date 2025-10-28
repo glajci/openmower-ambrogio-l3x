@@ -223,24 +223,24 @@ Connect as show below.
 #### Variant 1 - Raspberry Pi Zero W based (recommended)
 Print the 3d model.
 
-![](readme/IMG_XXXX.JPG?)
+![](readme/IMG_9281.JPG?)
 
 Assemble the Raspberry Pi Zero W and LCD display and connect the wires as shown below.
 
-![](readme/IMG_XXXX.JPG?)
-![](readme/IMG_XXXX.JPG?)
+![](readme/IMG_9284.JPG?)
+![](readme/IMG_9287.JPG?)
+
+Connect micro Usb to Ethernet converter to Pi Zero W
+
+![](readme/IMG_9288.JPG?)
 
 Install the display in the mower and connect it with the top cover panel.
 
-![](readme/IMG_XXXX.JPG?)
-![](readme/IMG_XXXX.JPG?)
-![](readme/IMG_XXXX.JPG?)
+![](readme/IMG_9289.JPG?)
 
 Connect the display with Raspberry Pi using Usb - micro Usb cable
 Connect the display with Raspberry Pi using Ethernet cable - (micro Usb to Ethernet adapter on Pi Zero side)
 
-![](readme/IMG_XXXX.JPG?)
-![](readme/IMG_XXXX.JPG?)
 
 #### Variant 2 - Rasberry Pico W based
 Print the 3d model.
