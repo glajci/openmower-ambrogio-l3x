@@ -239,6 +239,7 @@ Install the display in the mower and connect it with the top cover panel.
 ![](readme/IMG_9289.JPG?)
 
 Connect the display with Raspberry Pi using Usb - micro Usb cable
+
 Connect the display with Raspberry Pi using Ethernet cable - (micro Usb to Ethernet adapter on Pi Zero side)
 
 
