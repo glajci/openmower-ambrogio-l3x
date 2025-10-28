@@ -368,7 +368,7 @@ Insert micro SD card to Pi Zero W and power it on. Wait until it starts.
 > All examples below are for Windows OS and for user omdisplay and password omdisplay. Please change it accordingly to your setup.
 
 
-Edit [config.py](pico_zero_w/display/src/config.py) file and set the IP of the Openmower's Rpi Ehternet device.
+Edit [config.py](pi_zero_w/display/src/config.py) file and set the IP of the Openmower's Rpi Ehternet device.
 ```
 mqtt_host = "172.16.78.1"
 mqtt_port = 1883
@@ -378,9 +378,9 @@ mqtt_port = 1883
 > To determine the IP of the Openmower's Rpi Ehternet device, SSH to Openmower Rpi and execute ip addr show eth0
 
 
-Copy all python (*.py) files from [pico_zero_w/display/src](pico_zero_w/display/src) to Pi Zero W.
+Copy all python (*.py) files from [pi_zero_w/display/src](pi_zero_w/display/src) to Pi Zero W.
 ```
-pscp -r -pw omdisplay {your_location}\pico_zero_w\display\src\*.* omdisplay@omdisplay.local:/home/omdisplay
+pscp -r -pw omdisplay {your_location}\pi_zero_w\display\src\*.* omdisplay@omdisplay.local:/home/omdisplay
 ```
 
 SSH to Pi Zero W
@@ -495,7 +495,7 @@ While holding down the BOOTSEL button on your Pico, connect it to your device vi
 
 The Pico should present itself as a USB mass storage drive.
 
-Copy the [UF2](display/RPI_PICO_W-20241129-v1.24.1.uf2) file to the root of the drive. Once copied, the storage drive will automatically disconnect, and the Pico is ready for use.
+Copy the [UF2](pico_w/display/RPI_PICO_W-20241129-v1.24.1.uf2) file to the root of the drive. Once copied, the storage drive will automatically disconnect, and the Pico is ready for use.
 
 ##### Basic Config
 
