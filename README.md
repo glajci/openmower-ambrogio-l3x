@@ -329,9 +329,6 @@ export OM_EMERGENCY_TILT_PERIOD="2500"
 
 Display connects to the OpenMower's MQTT over Ethernet, to both, read and send MQTT messages.
 
-> [!NOTE]
-> You will find similar project in [openmower-display](https://github.com/glajci/openmower-display/blob/main/README.md) repository.
-
 #### Features
 
 * Show actual OpenMower state, sensors values (GPS accuracy, Battery voltage, Charging)
@@ -362,30 +359,55 @@ Flash Raspberry Pi OS Lite (no desktop) to the SD Card using [RPi Imager](https:
 > [!NOTE]
 > Do not forget to configure: hostname, login, password, wifi SSID, wifi password and enable SSH to get access to Pi Zero W later on.
 
+
 Insert micro SD card to Pi Zero W and power it on. Wait until it starts.
+
 
 > [!NOTE]
 > All examples below are for Windows OS and for user omdisplay and password omdisplay. Please change it accordingly to your setup.
 
+
 Edit [config.py](pico_zero_w/display/src/config.py) file and set the IP of the Openmower's Rpi Ehternet device.
-example
 ```
 mqtt_host = "172.16.78.1"
 mqtt_port = 1883
 ```
+
 > [!NOTE]
 > To determine the IP of the Openmower's Rpi Ehternet device, SSH to Openmower Rpi and execute ip addr show eth0
 
+
 Copy all python (*.py) files from [pico_zero_w/display/src](pico_zero_w/display/src) to Pi Zero W.
-example
 ```
 pscp -r -pw omdisplay {your_location}\pico_zero_w\display\src\*.* omdisplay@omdisplay.local:/home/omdisplay
 ```
 
 SSH to Pi Zero W
-example
 ```
 putty -ssh omdisplay.local:22 -l omdisplay -pw omdisplay  
+```
+
+Enable I2C on Pi Zero W
+```
+sudo raspi-config
+```
+
+Then navigate: Interface Options  →  I2C  →  Yes  →  Finish
+
+Then reboot:
+```
+sudo reboot
+```
+
+SSH to Pi Zero W again
+```
+putty -ssh omdisplay.local:22 -l omdisplay -pw omdisplay  
+```
+
+Install paho-mqtt
+```
+sudo apt update
+sudo apt install python3-paho-mqtt -y
 ```
 
 Make main.py file executable
@@ -410,7 +432,7 @@ WorkingDirectory=/home/omdisplay
 StandardOutput=inherit
 StandardError=inherit
 Restart=always
-User=pi
+User=omdisplay
 
 [Install]
 WantedBy=multi-user.target
