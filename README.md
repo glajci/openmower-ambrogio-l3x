@@ -43,7 +43,6 @@ You will need:
 * 3D printer
 * [Vesc Tool Free](https://vesc-project.com/node/17)
 * 16x2 LCD Display with I2C adapter (optional)
-* Raspberry Pi Zero W + micro Usb Ethernet adapter or Raspberry Pico W (optional)
 * 2 relay module (optional)
 
 # Assembly
@@ -220,49 +219,30 @@ Connect as show below.
 
 ### (Optional) Install the display.
 
-#### Variant 1 - Raspberry Pi Zero W based (recommended)
-Print the 3d model.
+Print the ![3d model](print/Ambrogio L30 display holder.stl?).
 
 ![](readme/IMG_9281.JPG?)
 
-Assemble the Raspberry Pi Zero W and LCD display and connect the wires as shown below.
-
-![](readme/IMG_9284.JPG?)
-![](readme/IMG_9287.JPG?)
-
-Connect micro Usb to Ethernet converter to Pi Zero W
-
-![](readme/IMG_9288.JPG?)
+Place LCD display in the holder.
 
 Install the display in the mower and connect it with the top cover panel.
 
 ![](readme/IMG_9289.JPG?)
 
-Connect the display with Raspberry Pi using Usb - micro Usb cable
+Use 40 pin female-female IDC Cable to create the wiring harness for the display and for the top cover panel as shown below.
 
-Connect the display with Raspberry Pi using Ethernet cable - (micro Usb to Ethernet adapter on Pi Zero side)
+Connect 40 pin Cable with Rasberry Pi expansion board.
+Plug expansion board in the Openmower mainboard.
+Plug Raspberry Pi in the expansion board as shown below.
 
 
-#### Variant 2 - Rasberry Pico W based
-Print the 3d model.
+Connect the other end of the 40 pin cable with the display and with the top cover panel as shown below. 
 
-![](readme/IMG_7888.JPG?)
+![](readme/IMG_9284.JPG?)
+![](readme/IMG_9287.JPG?)
 
-Assemble the Raspberry Pico W and LCD display and connect the wires as shown below.
 
-![](readme/IMG_7910.JPG?)
-![](readme/IMG_7911.JPG?)
 
-Install the display in the mower and connect it with the top cover panel.
-
-![](readme/IMG_7909.JPG?)
-![](readme/IMG_7913.JPG?)
-![](readme/IMG_7916.JPG?)
-
-Connect the display with Raspberry Pi using Usb - micro Usb cable
-
-![](readme/IMG_7928.JPG?)
-![](readme/IMG_7929.JPG?)
 
 
 ## Software
@@ -326,9 +306,9 @@ export OM_EMERGENCY_LIFT_PERIOD="100"
 export OM_EMERGENCY_TILT_PERIOD="2500"
 ```
 
-### The display - Variant 1 - Raspberry Pi Zero W + micro Usb to Ethernet adapter (recommended)
+### The display
 
-Display connects to the OpenMower's MQTT over Ethernet, to both, read and send MQTT messages.
+Display connects to the OpenMower's MQTT, to both, read and send MQTT messages.
 
 #### Features
 
@@ -340,33 +320,13 @@ Display connects to the OpenMower's MQTT over Ethernet, to both, read and send M
 
 You will need:
 
-* A [Raspberry Pi Zero W](https://www.raspberrypi.com/news/raspberry-pi-pico-w-your-6-iot-platform/).
-* A micro SD Card (at least 8GB)
-* A micro USB to Ethernet adapter.
 * A 16x2 lcd i2c display.
-* A micro-USB cable and Ethernet cable.
+* A Raspberry Pi expansion board.
+* A 40 pin cable.
 * A source code files (included in this repository)
 * A computer (presumably, the one you are reading this on!)
 
-Additionally, if your Zero W does not have any GPIO headers pre-attached, you will need:
-
-* A pair of Zero GPIO header pins.
-* A soldering iron + solder.
-* A breadboard to align the pins while soldering.
-
 ##### Setup
-
-Flash Raspberry Pi OS Lite (no desktop) to the SD Card using [RPi Imager](https://www.raspberrypi.com/software)
-> [!NOTE]
-> Do not forget to configure: hostname, login, password, wifi SSID, wifi password and enable SSH to get access to Pi Zero W later on.
-
-
-Insert micro SD card to Pi Zero W and power it on. Wait until it starts.
-
-
-> [!NOTE]
-> All examples below are for Windows OS and for user omdisplay and password omdisplay. Please change it accordingly to your setup.
-
 
 Edit [config.py](pi_zero_w/display/src/config.py) file and set the IP of the Openmower's Rpi Ehternet device.
 ```
@@ -375,21 +335,26 @@ mqtt_port = 1883
 ```
 
 > [!NOTE]
-> To determine the IP of the Openmower's Rpi Ehternet device, SSH to Openmower Rpi and execute ip addr show eth0
-
-
-Copy all python (*.py) files from [pi_zero_w/display/src](pi_zero_w/display/src) to Pi Zero W.
+> To determine the IP of the Openmower's Rpi Ehternet device, SSH to Openmower Rpi and execute the following:
 ```
-pscp -r -pw omdisplay {your_location}\pi_zero_w\display\src\*.* omdisplay@omdisplay.local:/home/omdisplay
+putty -ssh openmower.local:22 -l openmower -pw openmower 
+hostname -I
 ```
 
-SSH to Pi Zero W
+SSH to Openmower Rpi and create /home/openmower/display directory
 ```
-putty -ssh omdisplay.local:22 -l omdisplay -pw omdisplay  
+putty -ssh openmower.local:22 -l openmower -pw openmower
+sudo mkdir display
 ```
 
-Enable I2C on Pi Zero W
+Copy all python (*.py) files from [display folder](display) to Rpi.
 ```
+pscp -r -pw openmower {your_location}\display\*.* openmower@openmower.local:/home/openmower/display
+```
+
+SSH to Openmower Rpi and enable I2C
+```
+putty -ssh openmower.local:22 -l openmower -pw openmower
 sudo raspi-config
 ```
 
@@ -400,20 +365,16 @@ Then reboot:
 sudo reboot
 ```
 
-SSH to Pi Zero W again
+SSH to Openmower Rpi and install paho-mqtt
 ```
-putty -ssh omdisplay.local:22 -l omdisplay -pw omdisplay  
-```
-
-Install paho-mqtt
-```
+putty -ssh openmower.local:22 -l openmower -pw openmower
 sudo apt update
 sudo apt install python3-paho-mqtt -y
 ```
 
 Make main.py file executable
 ```
-chmod +x /home/omdisplay/main.py
+chmod +x /home/openmower/display/main.py
 ```
 
 Create new systemd service file
@@ -428,12 +389,12 @@ Description=My Python Startup Script
 After=network.target
 
 [Service]
-ExecStart=/usr/bin/python3 /home/omdisplay/main.py
-WorkingDirectory=/home/omdisplay
+ExecStart=/usr/bin/python3 /home/openmower/display/main.py
+WorkingDirectory=/home/openmower/display
 StandardOutput=inherit
 StandardError=inherit
 Restart=always
-User=omdisplay
+User=openmower
 
 [Install]
 WantedBy=multi-user.target
@@ -446,7 +407,7 @@ sudo systemctl enable omdisplay.service
 sudo systemctl start omdisplay.service
 ```
 
-The application will now auto-start whenever you supply power to your Pi Zero W.
+Omdisplay.service will from now on auto-start whenever you supply power to Rpi.
 
 To check status
 ```
@@ -457,86 +418,6 @@ To see the logs
 ```
 journalctl -u omdisplay.service -f
 ```
-
-
-### The display - Variant 2 - Raspberry Pico W
-
-Display connects to the OpenMower's MQTT over WIFI (either via router or directly to OpenMower's Hotspot), to both, read and send MQTT messages.
-
-> [!NOTE]
-> You will find similar project in [openmower-display](https://github.com/glajci/openmower-display/blob/main/README.md) repository.
-
-#### Features
-
-* Show actual OpenMower state, sensors values (GPS accuracy, Battery voltage, Charging)
-* Start, Pause, Dock, Reset Emergency, Skip area, Skip path actions
-* Sleep timer turns off display after 60s, wakes on any button press
-
-#### Tools
-
-You will need:
-
-* A [Raspberry Pi Pico W](https://www.raspberrypi.com/news/raspberry-pi-pico-w-your-6-iot-platform/).
-* A 16x2 lcd i2c display.
-* A micro-USB cable.
-* A UF2 image (included in this repository) for Pico W.
-* A computer (presumably, the one you are reading this on!)
-* [Thonny](https://thonny.org/).
-
-Additionally, if your Pico W does not have any GPIO headers pre-attached, you will need:
-
-* A pair of Pico GPIO header pins.
-* A soldering iron + solder.
-* A breadboard to align the pins while soldering.
-
-##### Setup
-
-While holding down the BOOTSEL button on your Pico, connect it to your device via micro-USB cable.
-
-The Pico should present itself as a USB mass storage drive.
-
-Copy the [UF2](pico_w/display/RPI_PICO_W-20241129-v1.24.1.uf2) file to the root of the drive. Once copied, the storage drive will automatically disconnect, and the Pico is ready for use.
-
-##### Basic Config
-
-There are 2 possible configurations of the display:
-1. connecting the display to the same WIFI, the OpenMower is connected
-2. connecting the display to the OpenMower's Hotspot (possible if you are using external WIFI USB dongle plugged in the OpenMower's Raspberry Pi with [this](/readme/hotspot.txt.settings) CommitUp configuration of the OpenMower (primary_wifi_device: wlan0)
- * Personally I prefer the option 2, as you will avoid WIFI range issues (Rpi Pico W does not have the external WIFI antenna connector). Connecting the display to the RPi HotSpot will ensure the stable connection. Option 1 will work as well if you have a good WIFI coverage over the mowing areas or if you intend to use it as a Remote Control.
-   
-Open the following files in the text editor of your choice: `config.py` and `secrets.py`.
-
-In `secrets.py`, you need to provide:
-
-* The SSID and password for your WiFi network or OpenMower Hotspot (prefferable).
-
-Example:
-```bash
-ssid = "openmower-93"
-password = "openmower"
-```
-
-In `config.py`, you need to provide:
-
-* The IP address or hostname (openmower.local) of MQTT of the OpenMower, and the MQTT port
-
-Example:
-```bash
-mqtt_host = "10.41.0.1"
-mqtt_port = 1883
-```
-
-##### First Run
-
-Once the above steps are complete, connect your Pico W to your machine and open Thonny. Make sure to select the Pico's MicroPython environment on the bottom-right of the Thonny window, then, once connected, upload each of the `.py` files to your device.
-
-**NOTE:** Depending on the UF2 image that you used, you *might* need to install the `urequests` package before running the display for the first time. To do this, uncomment the relavent lines in `mqtt.py`, save to the Pico and then run `main.py` once manually in order for the Pico to connect to your network and install the package. Alternatively, you can install `urequests` to the Pico via Thonny's package manager.
-
-Once installed, stop execution, re-comment or delete the lines, save and re-upload to the Pico.
-
-The application will now auto-start whenever you supply power to your Pico.
-
-
 
 
 
