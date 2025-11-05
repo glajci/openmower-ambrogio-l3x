@@ -12,11 +12,11 @@ class App:
     def __init__(self):
         # Buttons (GPIO pins)
         # Adjust pin numbers for your wiring layout
-        self.buttonUp = Button(19, pull_up=True)    #brown
-        self.buttonDown = Button(16, pull_up=True)  #red
-        self.buttonEnter = Button(26, pull_up=True) #yellow
-        self.buttonDock = Button(20, pull_up=False) #pink
-        self.buttonPlay = Button(21, pull_up=False) #gray
+        self.buttonUp = Button(19, pull_up=True)
+        self.buttonDown = Button(16, pull_up=True)
+        self.buttonEnter = Button(26, pull_up=True)
+        self.buttonDock = Button(20, pull_up=False)
+        self.buttonPlay = Button(21, pull_up=False)
 
         self.menu = Menu()
         self.display = Display()
