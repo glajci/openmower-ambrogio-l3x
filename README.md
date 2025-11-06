@@ -232,13 +232,12 @@ Install the display in the mower.
 
 ![](readme/IMG_9396.JPG?)
 
-Use 40 pin female-female IDC Cable to create the wiring harness for the display and for the top cover panel as shown below.
+Use 40 pin female-female IDC Cable and Raspberry Pi expansion board to create the wiring harness for the display and for the top cover panel as shown below.
+
+![](readme/ambrogio_l30_display_wiring_diagram.jpg)
 
 ![](readme/IMG_9380.JPG?)
 ![](readme/IMG_9388.JPG?)
-
-Connect 40 pin Cable with Rasberry Pi expansion board.
-
 ![](readme/IMG_9379.JPG?)
 ![](readme/IMG_9381.JPG?)
 
