@@ -189,7 +189,7 @@ Install the GPS antena in the body and seal it with the silicone.
 
 Install a piece of steel material from the bottom as the antenna shield.
 
-![](readme/IMG_7928.JPG?)
+![](readme/IMG_9403.JPG?)
 
 
 ### (Optional) Install the 2 relay module as power switch.
@@ -219,30 +219,41 @@ Connect as show below.
 
 ### (Optional) Install the display.
 
-Print the ![3d model](print/Ambrogio L30 display holder.stl?).
+Print the 3d model.
 
-![](readme/IMG_9281.JPG?)
+![](readme/IMG_9393.JPG?)
 
 Place LCD display in the holder.
 
-Install the display in the mower and connect it with the top cover panel.
+![](readme/IMG_9394.JPG?)
+![](readme/IMG_9395.JPG?)
 
-![](readme/IMG_9289.JPG?)
+Install the display in the mower.
+
+![](readme/IMG_9396.JPG?)
 
 Use 40 pin female-female IDC Cable to create the wiring harness for the display and for the top cover panel as shown below.
 
+![](readme/IMG_9380.JPG?)
+![](readme/IMG_9388.JPG?)
+
 Connect 40 pin Cable with Rasberry Pi expansion board.
+
+![](readme/IMG_9379.JPG?)
+![](readme/IMG_9381.JPG?)
+
 Plug expansion board in the Openmower mainboard.
 Plug Raspberry Pi in the expansion board as shown below.
 
+![](readme/IMG_9397.JPG?)
+![](readme/IMG_9398.JPG?)
 
 Connect the other end of the 40 pin cable with the display and with the top cover panel as shown below. 
 
-![](readme/IMG_9284.JPG?)
-![](readme/IMG_9287.JPG?)
-
-
-
+![](readme/IMG_9400.JPG?)
+![](readme/IMG_9401.JPG?)
+![](readme/IMG_9402.JPG?)
+![](readme/IMG_9403.JPG?)
 
 
 ## Software
